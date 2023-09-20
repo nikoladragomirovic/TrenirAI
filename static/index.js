@@ -9,6 +9,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const anchorX = rect.left + rect.width / 2;
     const anchorY = rect.top + rect.height / 2;
 
+    const button = document.getElementById('image');
+    const email = document.getElementById('email');
+
+    button.addEventListener('click', function() {
+
+        button.classList.add('animate');
+        email.classList.add('disable');
+
+        setTimeout(() => {
+
+            button.classList.remove('animate');
+            email.classList.remove('disable');
+
+        }, 1000);
+
+    });
+
     document.addEventListener('mousemove', (e) => {
         
         const mouseX = e.clientX;
@@ -42,7 +59,7 @@ function hidePreloader(preloader, img, navigation){
                 document.body.style.overflow = 'auto';
             }, 500);
     
-        }, 1300);
+        }, 0);
     }
 }
 
@@ -67,7 +84,6 @@ function smoothScroll(){
 function applyCardHoverEffects(mainCard, sideCard1, move1, sideCard2, move2) {
     $(mainCard).hover(function () {
     $(this).css('transform', 'scale(1.4)');
-    $(this).find('.bulletpoint').css('background-color', 'rgba(255, 126, 0, 1)');
     $(this).find('.price').css('transform', 'scale(1.3)');
     $(this).find('.price').css('color', 'rgb(255, 126, 0)');
 
@@ -76,9 +92,8 @@ function applyCardHoverEffects(mainCard, sideCard1, move1, sideCard2, move2) {
   
     }, function () {
     $(this).css('transform', 'none');
-    $(this).find('.bulletpoint').css('background-color', '#545454');
     $(this).find('.price').css('transform', 'none');
-    $(this).find('.price').css('color', '#5d5d5d');
+    $(this).find('.price').css('color', '#8a8a8a');
 
     $(sideCard1).css('transform', 'none');
     $(sideCard2).css('transform', 'none');

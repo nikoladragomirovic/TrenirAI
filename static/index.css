@@ -98,7 +98,7 @@ nav ul li a:hover{
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
-  }
+}
 
 #heading {
     color: white;
@@ -157,7 +157,7 @@ nav ul li a:hover{
 .card{
     background-color: #252525;
     border-radius: 30px;
-    height: 35vh;
+    height: 40vh;
     width: 40vh;
     transition: all 0.5s ease;
     margin: 45px;
@@ -185,23 +185,35 @@ nav ul li a:hover{
     margin: 0px !important;
     transition: 0.5s;
     font-weight: 500 !important;
-    color: #5d5d5d;
+    color: rgb(255, 126, 0) !important;
 }
 
 .card p{
     color: white;
     font-weight: 300;
     margin: 20px;
-    margin-bottom: 10px;
+    margin-bottom: -20px;
     margin-top: 5px !important;
     text-align: center;
 }
 
-.bulletpoint{
-    background-color: #5d5d5d;
-    border-radius: 10px;
-    padding: 7px;
-    transition: 0.5s;
+.card img{
+    transition: 0.5s ease;
+}
+
+.card:nth-child(1) img{
+    max-width: 23vh;
+    margin-left: -40px;
+}
+
+.card:nth-child(2) img{
+    max-width: 20vh;
+    margin-top: 2vh;
+}
+
+.card:nth-child(3) img{
+    max-width: 25vh;
+    margin-top: -1vh
 }
 
 #contact{
@@ -217,7 +229,7 @@ nav ul li a:hover{
 
 @keyframes dance {
     0%, 100% {
-      transform: translateY(0);
+      transform: translateY(10px);
     }
     50% {
       transform: translateY(-10px);
@@ -227,11 +239,15 @@ nav ul li a:hover{
 #contact img{
     max-height: 40vh;
     animation: dance 2s ease 0s infinite;
+    margin-right: -25%;
+    margin-left: -10%;
 }
 
 #form {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #form h1{
@@ -240,3 +256,91 @@ nav ul li a:hover{
     letter-spacing: 3px;
 }
 
+#title {
+    width: 158.5%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+#email{
+    border-radius: 20px;
+    width: 150%;
+    height: 6vh;
+    background-color: transparent;
+    border: 3px solid #303030;
+    font-size: 3vh;
+    color: rgb(153,153,153);
+    transition: all 0.3s ease;
+    padding: 2vh;
+    font-weight: 300;
+}
+
+#image {
+    height: 6vh;
+    margin: 3vh;
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    51% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25%, 75% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(5px) rotate(5deg);
+    }
+}
+
+#email:hover + #image {
+    animation: shake 0.5s linear;
+}
+
+.animate {
+    animation: moveUpDown 0.5s linear;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+#message {
+    border-radius: 20px;
+    width: 150%;
+    background-color: transparent;
+    border: 3px solid #303030;
+    margin-bottom: 5%;
+    font-size: 3vh;
+    height: 38vh !important;
+    color: rgb(153,153,153);
+    resize: none;
+    transition: all 0.3s ease;
+    padding: 2vh;
+    font-weight: 300;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: 3px solid #ff7e00 !important;
+    caret-color: #ff7e00;
+}
