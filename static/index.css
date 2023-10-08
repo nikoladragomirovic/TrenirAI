@@ -312,7 +312,7 @@ nav ul li a:hover{
     }
 }
 
-#email:hover + #image {
+input:focus + #image {
     animation: shake 0.5s linear;
 }
 
