@@ -70,7 +70,7 @@ function hidePreloader(preloader, img, navigation) {
         preloader.style.display = "none";
         document.body.style.overflow = "auto";
       }, 500);
-    }, 0);
+    }, 1300);
   }
 }
 
